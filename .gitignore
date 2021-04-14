@@ -1,0 +1,9 @@
+node_modules/
+coverage/
+.idea
+dist/
+.nyc_output/
+.vscode/**/*.*
+# !.vscode/launch.json
+.DS_Store
+package-lock.json
