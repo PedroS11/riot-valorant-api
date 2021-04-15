@@ -1,6 +1,6 @@
 {
   "name": "riot-valorant-api",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "A javascript wrapper for the Valorant Api",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
