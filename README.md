@@ -15,7 +15,7 @@ A npm module that wraps the Valorant Api.
  ## Documentation
  All methods available from Valorant API are supported, for more information regarding them, please visit [documentation](https://developer.riotgames.com/apis).
  
- For Typescript users, all the interfaces that represent the responses from the api are created and exported to be used.
+ For Typescript users, all the response interfaces from the api are created and exported to be used.
  ## Installation
  The package is available through NPM, which means you can choose to install it using either `npm` or `yarn`
  
