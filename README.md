@@ -2,7 +2,7 @@
   Riot Valorant API
 </h1>
 
-[![npm version](https://badge.fury.io/js/riot-valorant-api.svg)](https://badge.fury.io/js/riot-valorant-api)
+![npm](https://img.shields.io/npm/v/riot-valorant-api?color=brightgreen)
 ![GitHub repo size](https://img.shields.io/github/repo-size/PedroS11/riot-valorant-api)
 ![GitHub](https://img.shields.io/github/license/PedroS11/riot-valorant-api)
 
