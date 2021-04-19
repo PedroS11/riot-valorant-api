@@ -2,6 +2,7 @@ import { BaseApi } from "../../baseApi";
 import {
   Match,
   MatchList,
+  Queue,
   RecentMatches,
 } from "../../../types/valorant/match/matchV1";
 
@@ -10,7 +11,7 @@ export class MatchV1 extends BaseApi {
     return this.axiosInstance.get(`/val/match/v1/matchlists/by-puuid/${puuid}`);
   }
 
-  getRecentMatches(queue: string): Promise<RecentMatches> {
+  getRecentMatches(queue: Queue): Promise<RecentMatches> {
     return this.axiosInstance.get(
       `/val/match/v1/recent-matches/by-queue/${queue}`
     );

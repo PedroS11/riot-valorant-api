@@ -12,6 +12,12 @@ export interface MatchList {
   history: MatchListEntry[];
 }
 
+export enum Queue {
+  COMPETITIVE = "competitive",
+  UNRATED = "unrated",
+  SPIKERUSH = "spikerush",
+}
+
 export interface RecentMatches {
   currentTime: number;
 

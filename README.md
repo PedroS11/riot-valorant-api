@@ -2,8 +2,9 @@
   Riot Valorant API
 </h1>
 
-![npm](https://img.shields.io/npm/v/riot-valorant-api?color=brightgreen)
+[![npm version](https://badge.fury.io/js/riot-valorant-api.svg)](https://badge.fury.io/js/riot-valorant-api)
 ![GitHub repo size](https://img.shields.io/github/repo-size/PedroS11/riot-valorant-api)
+![GitHub](https://img.shields.io/github/license/PedroS11/riot-valorant-api)
 
 A npm module that wraps the Valorant Api.
 
@@ -59,9 +60,9 @@ Here are a few examples of the methods supported by the module.
  
 #### GetAllContent
 
-Get all content from Valorant:
+Get all content from Valorant. You can pass a locale or fetch the data with all the available locales
 ```js
-const content: Content = await valorantApi.contentV1.getAllContent()
+const content: Content = await valorantApi.ContentV1.getAllContent(Locales.EN_GB)
 ```
 
 ### Match V1
@@ -71,7 +72,7 @@ const content: Content = await valorantApi.contentV1.getAllContent()
 Get match by id
 
 ```js
-const match: Match = await valorantApi.matchV1.getMatchById("MATCH_ID")
+const match: Match = await valorantApi.MatchV1.getMatchById("MATCH_ID")
 ```
 
 #### GetMatchListsByPuuid
@@ -79,7 +80,7 @@ const match: Match = await valorantApi.matchV1.getMatchById("MATCH_ID")
 Get matchlist for games played by puuid
 
 ```js
-const matchlist : MatchList = await valorantApi.matchV1.getMatchListsByPuuid("PUUID")
+const matchlist : MatchList = await valorantApi.MatchV1.getMatchListsByPuuid("PUUID")
 ```
 
 #### GetRecentMatches
@@ -87,7 +88,7 @@ const matchlist : MatchList = await valorantApi.matchV1.getMatchListsByPuuid("PU
 Get recent matches
 
   ```js
-  const recentMatches: RecentMatches = await valorantApi.matchV1.getRecentMatches("QUEUE")
+  const recentMatches: RecentMatches = await valorantApi.MatchV1.getRecentMatches(Queue.COMPETITIVE)
   ```
  
  ### Ranked V1
@@ -98,7 +99,7 @@ Get recent matches
  
   
   ```js
-  const leaderboard: Leaderboard = await valorantApi.rankedV1.getLeaderboardByAct("ACT_ID", size = 20, startIndex = 0)
+  const leaderboard: Leaderboard = await valorantApi.RankedV1.getLeaderboardByAct("ACT_ID", size = 20, startIndex = 0)
   ```
   
   ### Status V1
@@ -110,6 +111,22 @@ Get recent matches
 ```js
 const status: PlatformData = await valorantApi.StatusV1.getPlatformData()
 ```
+
+## Errors
+All errors threw by the package will have the structure represented in [ApiError](./lib/types/apiError.ts).
+
+````js
+export interface ApiError {
+  request: {
+    method: string; // Method
+    path: string; // Path
+    baseUrl: string; // Base Url
+    headers: { [header: string]: string }; // Headers
+  };
+  status: number; // Status code
+  error: string; // Error message
+}
+````
     
  
  ## Problems or issues?

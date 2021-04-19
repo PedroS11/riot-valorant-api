@@ -12,10 +12,10 @@ import { StatusV1 } from "./valorant/status/statusV1";
 export class RiotValorantApi {
   private readonly region: Regions;
 
-  public rankedV1: RankedV1;
-  public statusV1: StatusV1;
-  public matchV1: MatchV1;
-  public contentV1: ContentV1;
+  public RankedV1: RankedV1;
+  public StatusV1: StatusV1;
+  public MatchV1: MatchV1;
+  public ContentV1: ContentV1;
 
   constructor(apiToken: string, region: Regions) {
     if (!apiToken) {
@@ -40,9 +40,9 @@ export class RiotValorantApi {
       errorInterceptor
     );
 
-    this.rankedV1 = new RankedV1(axiosInstance);
-    this.statusV1 = new StatusV1(axiosInstance);
-    this.matchV1 = new MatchV1(axiosInstance);
-    this.contentV1 = new ContentV1(axiosInstance);
+    this.RankedV1 = new RankedV1(axiosInstance);
+    this.StatusV1 = new StatusV1(axiosInstance);
+    this.MatchV1 = new MatchV1(axiosInstance);
+    this.ContentV1 = new ContentV1(axiosInstance);
   }
 }

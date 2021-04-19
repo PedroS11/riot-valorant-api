@@ -12,7 +12,7 @@ describe("StatusV1", () => {
   let axiosGetStub: SinonStub;
 
   const axiosInstance = axios.create({ baseURL: "https://www.test.com" });
-  const ranked = new StatusV1(axiosInstance);
+  const status = new StatusV1(axiosInstance);
 
   beforeEach(() => {
     axiosGetStub = sandbox.stub(axiosInstance, "get").resolves();
@@ -21,7 +21,7 @@ describe("StatusV1", () => {
   afterEach(() => sandbox.restore());
 
   it("should return a list of all available content", async () => {
-    await ranked.getPlatformData();
+    await status.getPlatformData();
 
     expect(axiosGetStub.getCalls().length).to.equals(1);
     expect(axiosGetStub.firstCall.args[0]).to.equal(
