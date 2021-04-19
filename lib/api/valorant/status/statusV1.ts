@@ -1,8 +1,8 @@
-import { Operation } from "../../operation";
-import { Content } from "../../../types/valorant/status/v1/content";
+import { BaseApi } from "../../baseApi";
+import { PlatformData } from "../../../types/valorant/status/statusV1";
 
-export class StatusV1 extends Operation {
-  getAllContent(): Promise<Content> {
-    return this.axiosInstance.get("/val/content/v1/contents");
+export class StatusV1 extends BaseApi {
+  getPlatformData(): Promise<PlatformData> {
+    return this.axiosInstance.get("/val/status/v1/platform-data");
   }
 }

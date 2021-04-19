@@ -1,8 +1,8 @@
 import qs from "qs";
-import { Leaderboard } from "../../../types/valorant/ranked/v1/leaderboard";
-import { Operation } from "../../operation";
+import { Leaderboard } from "../../../types/valorant/ranked/rankedV1";
+import { BaseApi } from "../../baseApi";
 
-export class RankedV1 extends Operation {
+export class RankedV1 extends BaseApi {
   public getLeaderboardByAct(
     actId: string,
     size: number = 20,

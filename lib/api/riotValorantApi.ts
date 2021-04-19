@@ -5,6 +5,8 @@ import {
 } from "../utils/axiosInterceptor";
 import { RankedV1 } from "./valorant/ranked/rankedV1";
 import { Regions } from "../types/valorant/regions";
+import { ContentV1 } from "./valorant/content/contentV1";
+import { MatchV1 } from "./valorant/match/matchV1";
 import { StatusV1 } from "./valorant/status/statusV1";
 
 export class RiotValorantApi {
@@ -12,6 +14,8 @@ export class RiotValorantApi {
 
   public rankedV1: RankedV1;
   public statusV1: StatusV1;
+  public matchV1: MatchV1;
+  public contentV1: ContentV1;
 
   constructor(apiToken: string, region: Regions) {
     if (!apiToken) {
@@ -38,5 +42,7 @@ export class RiotValorantApi {
 
     this.rankedV1 = new RankedV1(axiosInstance);
     this.statusV1 = new StatusV1(axiosInstance);
+    this.matchV1 = new MatchV1(axiosInstance);
+    this.contentV1 = new ContentV1(axiosInstance);
   }
 }

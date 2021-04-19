@@ -1,6 +1,6 @@
 import { AxiosInstance } from "axios";
 
-export abstract class Operation {
+export abstract class BaseApi {
   protected axiosInstance: AxiosInstance;
 
   constructor(axiosInstance: AxiosInstance) {

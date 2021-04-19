@@ -1,30 +1,19 @@
 import { AxiosError, AxiosResponse } from "axios";
+import { ApiError } from "../types/apiError";
 
 export const responseInterceptor = (response: AxiosResponse) => response.data;
 
-export const errorInterceptor = (error: AxiosError) => {
-  switch (error.response!.status) {
-    case 400:
-    case 401:
-    case 403:
-    case 404:
-    case 405:
-    case 415:
-    case 429:
-    case 500:
-    case 502:
-    case 503:
-    case 504:
-      // Handle errors threw by Valorant Api
-      return Promise.reject({
-        status: error.response!.status,
-        error: error.response!.data!.status!.message,
-      });
-    // Handle generic errors
-    default:
-      return Promise.reject({
-        status: error.response!.status,
-        error: error.response?.data?.status?.message || "Unexpected error",
-      });
-  }
+export const errorInterceptor = (error: AxiosError): Promise<ApiError> => {
+  const { config } = error;
+
+  return Promise.reject({
+    request: {
+      method: config.method,
+      path: error.config.url,
+      baseUrl: error.config.baseURL,
+      headers: error.config.headers,
+    },
+    status: error.response!.status,
+    error: error.response?.data?.status?.message || "Unexpected error",
+  });
 };
