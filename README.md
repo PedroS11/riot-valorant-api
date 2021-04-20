@@ -15,7 +15,7 @@ A NodeJS module that wraps the Valorant Api in a user friendly interface, availa
  ## Documentation
  All methods available from Valorant API are supported, for more information regarding them, please visit [documentation](https://developer.riotgames.com/apis).
  
- For Typescript users, all the response interfaces from the api are created and exported to be used.
+ For Typescript users, all the request and response api interfaces are created and exported to be used.
  ## Installation
  The package is available through NPM, which means you can choose to install it using either `npm` or `yarn`
  
@@ -150,5 +150,5 @@ To run the tests for this project:
 
 ## License 
 
-[MIT](https://github.com/PedroS11/riot-valorant-api/blob/master/LICENSE.md)
+[MIT](https://github.com/PedroS11/riot-valorant-api/blob/main/LICENSE.md)
 
