@@ -6,7 +6,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/PedroS11/riot-valorant-api)
 ![GitHub](https://img.shields.io/github/license/PedroS11/riot-valorant-api)
 
-A npm module that wraps the Valorant Api.
+A NodeJS module that wraps the Valorant Api in a user friendly interface, available on [NPM](https://www.npmjs.com/package/riot-valorant-api).
 
 ## Disclaimer
 
