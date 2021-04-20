@@ -1,6 +1,6 @@
 {
   "name": "riot-valorant-api",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A NodeJS module that wraps the Valorant Api in a user friendly interface",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
