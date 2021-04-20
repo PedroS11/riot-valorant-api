@@ -1,7 +1,7 @@
 {
   "name": "riot-valorant-api",
-  "version": "0.2.0",
-  "description": "A javascript wrapper for the Valorant Api",
+  "version": "0.2.1",
+  "description": "A NodeJS module that wraps the Valorant Api in a user friendly interface",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -16,7 +16,8 @@
   "keywords": [
     "riot",
     "valorant",
-    "typescript"
+    "typescript",
+    "api"
   ],
   "author": "Pedro Silva",
   "license": "MIT",
