@@ -128,8 +128,27 @@ export interface ApiError {
 }
 ````
     
+## Tests
+
+To run the tests for this project:
+
+ NPM:
+ ```sh
+ npm run test
+ ```
+ 
+ Yarn:
+ ```sh
+ yarn test
+ ```
  
  ## Problems or issues?
  
  If you encounter any problems, bugs or other issues with the package, please create an [issue in the GitHub repo](https://github.com/PedroS11/riot-valorant-api/issues). 
+ 
+ 
+
+## License 
+
+[MIT](https://github.com/PedroS11/riot-valorant-api/blob/master/LICENSE.md)
 
