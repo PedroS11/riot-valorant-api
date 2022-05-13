@@ -18,7 +18,7 @@ describe("axiosInterceptor", () => {
     axiosStub.restore();
   });
 
-  it("should return the error with a custom format when an error occurs", async () => {
+  it("should return the error object with a custom format when an error occurs", async () => {
     axiosStub.onGet("/").reply(500, "OH NO");
     const instance = axiosInterceptor(
       axios.create({
