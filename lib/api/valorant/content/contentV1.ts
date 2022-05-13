@@ -4,7 +4,7 @@ import { Locales } from "../../../types/valorant/locales";
 import qs from "qs";
 
 export class ContentV1 extends BaseApi {
-  getAllContent(locale?: Locales): Promise<Content> {
+  async getAllContent(locale?: Locales): Promise<Content> {
     let url = "/val/content/v1/contents";
 
     if (locale !== undefined) {
