@@ -1,8 +1,5 @@
 import axios, { AxiosInstance } from "axios";
-import {
-  errorInterceptor,
-  responseInterceptor,
-} from "../utils/axiosInterceptor";
+import { axiosInterceptor } from "../utils/axiosInterceptor";
 import { RankedV1 } from "./valorant/ranked/rankedV1";
 import { Regions } from "../types/valorant/regions";
 import { ContentV1 } from "./valorant/content/contentV1";
@@ -28,16 +25,13 @@ export class RiotValorantApi {
 
     this.region = region;
 
-    const axiosInstance: AxiosInstance = axios.create({
-      baseURL: `https://${this.region}.api.riotgames.com/`,
-      headers: {
-        "X-Riot-Token": apiToken,
-      },
-    });
-
-    axiosInstance.interceptors.response.use(
-      responseInterceptor,
-      errorInterceptor
+    const axiosInstance: AxiosInstance = axiosInterceptor(
+      axios.create({
+        baseURL: `https://${this.region}.api.riotgames.com/`,
+        headers: {
+          "X-Riot-Token": apiToken,
+        },
+      })
     );
 
     this.RankedV1 = new RankedV1(axiosInstance);

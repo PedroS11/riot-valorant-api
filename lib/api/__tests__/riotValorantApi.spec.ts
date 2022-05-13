@@ -21,25 +21,4 @@ describe("RiotValorantApi", () => {
     // @ts-ignore
     expect(() => new RiotValorantApi("TOKEN")).to.throw("Empty region");
   });
-
-  it("should throw a custom error object if an error occurs", async () => {
-    try {
-      await api.ContentV1.getAllContent();
-    } catch (e) {
-      expect(e).to.deep.equals({
-        error: "Forbidden",
-        request: {
-          baseUrl: "https://eu.api.riotgames.com/",
-          headers: {
-            Accept: "application/json, text/plain, */*",
-            "User-Agent": "axios/0.21.1",
-            "X-Riot-Token": "TOKEN",
-          },
-          method: "get",
-          path: "/val/content/v1/contents",
-        },
-        status: 403,
-      });
-    }
-  });
 });
