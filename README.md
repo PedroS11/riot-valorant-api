@@ -48,7 +48,7 @@ A NodeJS module that wraps the Valorant Api in a user friendly interface, availa
  
  Using native NodeJS:
  ```js
- const { RiotValorantApi, Regions.EUROPE } = require("node-twitch");
+ const { RiotValorantApi, Regions.EUROPE } = require("riot-valorant-api");
  
  const valorantApi = new RiotValorantApi("YOUR_TOKEN_API", Regions.EUROPE);
  ```
